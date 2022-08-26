@@ -1,0 +1,106 @@
+/*Default grid styles*/
+.grid-default {
+    width: 100%;
+    float: left;
+    margin: 15px 0;
+    border-top: 2px solid #5178af;
+}
+
+.grid-default thead {
+    width: calc(100% - 1.1em);
+    display: table;
+    table-layout: fixed;
+}
+
+.noScrolltbl.grid-default thead {
+    width: 100%;
+}
+
+.grid-default thead th {
+    text-align: left;
+    padding: 17px 5px;
+    font-family: "Segoe UI Semibold";
+    font-size: 14px;
+    color: #14202e;
+}
+
+.grid-default tbody {
+    height: 600px;
+    overflow-y: auto;
+    display: block;
+    border-top: 1px solid #7e7e7e;
+}
+
+.grid-default tbody tr {
+    border-bottom: 1px solid #f2f2f2;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.grid-default tbody td {
+    text-align: left;
+    padding: 15px 5px;
+    font-family: "Segoe UI";
+    font-size: 14px;
+    color: #14202e;
+    word-wrap: break-word;
+}
+
+.grid-default [class^="mdl2-"] {
+    cursor: pointer;
+    color: #214177;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+.grid-wrapper.additem-tbl .grid-default th:nth-child(2),
+.grid-wrapper.additem-tbl .grid-default td:nth-child(2) {
+    min-width: 25%;
+}
+
+.grid-default .actionCol,
+.grid-default .codeCol {
+    width: 7%;
+}
+
+.grid-wrapper.additem-tbl .grid-default .codeCol {
+    width: 20%;
+}
+
+.grid-default .descriptionCol {
+    width: 25%;
+}
+
+.grid-default .Descwidth {
+    width: 11%;
+}
+
+.grid-default .idCol {
+    width: 8%;
+}
+
+.grid-default .descriptionCol.textWrappedCell div {
+    max-width: 100%;
+}
+
+.gridViewstatusLink {
+    float: left;
+    padding-right: 10px;
+}
+
+#serviceDeliveryOrg .grid-default .codeCol, #serviceRelation .grid-default .codeCol {
+    width: 10%;
+}
+
+#techonologySpecialization .grid-default .codeCol {
+    width: 10%;
+}
+
+#serviceRelation .grid-default th:nth-child(5), #serviceRelation .grid-default td:nth-child(5) {
+    width: 12%;
+}
+
+#serviceRelation .grid-default th:nth-child(2), #serviceRelation .grid-default td:nth-child(2) {
+    width: 14%;
+}

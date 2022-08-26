@@ -1,1 +1,21 @@
-<p>grid works!</p>
+<div class="grid-wrapper additem-tbl">
+    <table class="grid-default" summary="{{gridTitle}}">
+        <thead>
+            <tr>
+                <th *ngFor="let column of columns" class="{{column.Class}}">{{column.Title}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let column of columns" class="{{column.Class}}">{{row[column.PropertyName]}}</td>
+                <!-- <td class="actionCol"><a href="" tabindex="0" id="{{1}}" class="mdl2-edit" ng-class="{'disabled': IsReaderRole}" ng-keypress="!IsReaderRole && showEditActivityTypePopUp(item,$index);focus('Edit-ActivityType',true)" ng-click="!IsReaderRole && showEditActivityTypePopUp(item,$index);focus('Edit-ActivityType',true)" aria-label="Edit"></a></td>
+                <td class="actionCol"><a href="" tabindex="0" id="A-{{2}}" class="mdl2-delete" ng-class="{'disabled': IsReaderRole}" ng-keypress="!IsReaderRole && removeActivityType(item,$index);focus('Remove-ActivityType',true)" ng-click="!IsReaderRole && removeActivityType(item,$index);focus('Remove-ActivityType',true)" aria-label="Delete"></a></td> -->
+            </tr>
+            <tr>
+                <td colspan="6" *ngIf="rows.length === 0">
+                    Search returned 0 results.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
