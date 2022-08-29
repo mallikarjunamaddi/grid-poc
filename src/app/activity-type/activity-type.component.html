@@ -1,2 +1,31 @@
 <h2>{{gridConfig.GridTitle}}</h2>
+
+<!-- Data Grid  -->
 <app-grid [gridConfig]="gridConfig" (delete)="deleteById($event)" (edit)="editById($event)"></app-grid>
+
+<!-- Edit Popup -->
+<div class="edit-modal modal-default" *ngIf="enableEditPopup">
+    <header>
+        <h4>Edit Activity Type</h4>
+        <a tabindex="0" title="close modal" (click)="cancelEditActivityType()" id="Edit-ActivityType"><span
+                class="mdl2-clear"></span></a>
+    </header>
+    <section>
+        Display Edit Form
+    </section>
+    selectedItem : {{selectedItem | json}}
+</div>
+
+<!-- Remove Popup -->
+<div class="remove-modal modal-default" *ngIf="enableRemovePopup">
+    <div>
+        <header>
+            <a title="close modal" (click)="CancelRemoveActivityType()" id="Remove-ActivityType"><span
+                    class="mdl2-clear"></span></a>
+        </header>
+        <section>
+            Display Remove Form
+        </section>
+        selectedItem : {{selectedItem | json}}
+    </div>
+</div>

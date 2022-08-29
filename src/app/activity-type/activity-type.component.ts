@@ -8,6 +8,9 @@ import { GridConfig } from '../SharedModels/GridConfig';
 })
 export class ActivityTypeComponent implements OnInit {
   gridConfig: GridConfig;
+  selectedItem: any;
+  enableEditPopup: boolean;
+  enableRemovePopup: boolean;
 
   constructor() {
     this.gridConfig = {
@@ -27,17 +30,32 @@ export class ActivityTypeComponent implements OnInit {
         { PropertyName: 'ActivityTypeCategoryName', Title: 'Activity Type Category', Class: 'codeCol' },
         { PropertyName: 'IsCostRateRegistrationAllowed', Title: 'Is Cost Rate Registration Allowed', Class: 'codeCol' },
       ]
-    }
+    };
+
+    this.enableEditPopup = false;
+    this.enableRemovePopup = false;
   }
 
   ngOnInit(): void {
   }
 
+  cancelEditActivityType() {
+    this.enableEditPopup = false;
+  }
+
+  CancelRemoveActivityType() {
+    this.enableRemovePopup = false;
+  }
+
   deleteById(rowId: number) {
-    this.gridConfig.Rows = this.gridConfig.Rows.filter(x => x[this.gridConfig.RowProperty] != rowId);
+    this.enableEditPopup = false;
+    this.enableRemovePopup = true;
+    this.selectedItem = this.gridConfig.Rows.filter(x => x[this.gridConfig.RowProperty] == rowId)[0];
   }
 
   editById(rowId: number) {
-    console.log(rowId);
+    this.enableEditPopup = true;
+    this.enableRemovePopup = false;
+    this.selectedItem = this.gridConfig.Rows.filter(x => x[this.gridConfig.RowProperty] == rowId)[0];
   }
 }
