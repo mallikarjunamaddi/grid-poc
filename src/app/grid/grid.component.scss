@@ -122,13 +122,13 @@
     background-repeat: repeat;
     margin-top: 0;
 }
-.mdl2-edit::before {
-    content: '\e70f';
-}
+// .mdl2-edit::before {
+//     content: '\e70f';
+// }
 
-.mdl2-delete::before {
-    content: '\e74d';
-}
+// .mdl2-delete::before {
+//     content: '\e74d';
+// }
 
 .mdl2-delete-Enabled {
     cursor: pointer;

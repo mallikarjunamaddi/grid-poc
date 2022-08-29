@@ -11,10 +11,16 @@
             <tr *ngFor="let row of gridConfig.Rows">
                 <td *ngFor="let column of gridConfig.Columns" class="{{column.Class}}">{{row[column.PropertyName]}}</td>
                 <td *ngIf="gridConfig.IsActionsAllowed" class="actionCol">
-                    <a class="mdl2-edit" [ngClass]="{'disabled': !gridConfig.IsActionsEnabled}" aria-label="Edit" (click)="onEdit(row[gridConfig.RowProperty])"></a>
+                    <a class="mdl2-edit" [ngClass]="{'disabled': !gridConfig.IsActionsEnabled}" aria-label="Edit"
+                        (click)="onEdit(row[gridConfig.RowProperty])">
+                        <i class='fa fa-edit'></i>
+                    </a>
                 </td>
                 <td *ngIf="gridConfig.IsActionsAllowed" class="actionCol">
-                    <a class="mdl2-delete" [ngClass]="{'disabled': !gridConfig.IsActionsEnabled}" (click)="onDelete(row[gridConfig.RowProperty])" aria-label="Delete"></a>
+                    <a class="mdl2-delete" [ngClass]="{'disabled': !gridConfig.IsActionsEnabled}"
+                        (click)="onDelete(row[gridConfig.RowProperty])" aria-label="Delete">
+                        <i class="fa fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         </tbody>
