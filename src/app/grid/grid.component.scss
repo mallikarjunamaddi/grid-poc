@@ -104,3 +104,37 @@
 #serviceRelation .grid-default th:nth-child(2), #serviceRelation .grid-default td:nth-child(2) {
     width: 14%;
 }
+
+[class^="mdl2-"], [class*="mdl2-"] {
+    font-family: 'SegoeMDL2Assets';
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    /* sprites.less reset */
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: 1;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+}
+.mdl2-edit::before {
+    content: '\e70f';
+}
+
+.mdl2-delete::before {
+    content: '\e74d';
+}
+
+.mdl2-delete-Enabled {
+    cursor: pointer;
+}
+
+.mdl2-delete-Disabled {
+    cursor: default !important;
+    opacity: 0.5;
+}

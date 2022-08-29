@@ -1,19 +1,20 @@
-<div class="grid-wrapper additem-tbl">
-    <table class="grid-default" summary="{{gridTitle}}">
+<div class="grid-wrapper additem-tbl" *ngIf="gridConfig">
+    <table class="grid-default" summary="{{gridConfig.GridTitle}}">
         <thead>
             <tr>
-                <th *ngFor="let column of columns" class="{{column.Class}}">{{column.Title}}</th>
+                <th *ngFor="let column of gridConfig.Columns" class="{{column.Class}}">{{column.Title}}</th>
+                <th *ngIf="gridConfig.IsActionsAllowed" class="actionCol">Edit</th>
+                <th *ngIf="gridConfig.IsActionsAllowed" class="actionCol">Remove</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let row of rows">
-                <td *ngFor="let column of columns" class="{{column.Class}}">{{row[column.PropertyName]}}</td>
-                <!-- <td class="actionCol"><a href="" tabindex="0" id="{{1}}" class="mdl2-edit" ng-class="{'disabled': IsReaderRole}" ng-keypress="!IsReaderRole && showEditActivityTypePopUp(item,$index);focus('Edit-ActivityType',true)" ng-click="!IsReaderRole && showEditActivityTypePopUp(item,$index);focus('Edit-ActivityType',true)" aria-label="Edit"></a></td>
-                <td class="actionCol"><a href="" tabindex="0" id="A-{{2}}" class="mdl2-delete" ng-class="{'disabled': IsReaderRole}" ng-keypress="!IsReaderRole && removeActivityType(item,$index);focus('Remove-ActivityType',true)" ng-click="!IsReaderRole && removeActivityType(item,$index);focus('Remove-ActivityType',true)" aria-label="Delete"></a></td> -->
-            </tr>
-            <tr>
-                <td colspan="6" *ngIf="rows.length === 0">
-                    Search returned 0 results.
+            <tr *ngFor="let row of gridConfig.Rows">
+                <td *ngFor="let column of gridConfig.Columns" class="{{column.Class}}">{{row[column.PropertyName]}}</td>
+                <td *ngIf="gridConfig.IsActionsAllowed" class="actionCol">
+                    <a class="mdl2-edit" [ngClass]="{'disabled': gridConfig.IsActionsEnabled}" aria-label="Edit" (click)="onEdit(row[gridConfig.RowProperty])"></a>
+                </td>
+                <td *ngIf="gridConfig.IsActionsAllowed" class="actionCol">
+                    <a class="mdl2-delete" [ngClass]="{'disabled': gridConfig.IsActionsEnabled}" (click)="onDelete(row[gridConfig.RowProperty])" aria-label="Delete"></a>
                 </td>
             </tr>
         </tbody>
