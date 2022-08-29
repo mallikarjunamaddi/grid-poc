@@ -21,7 +21,13 @@ export class ActivityTypeComponent implements OnInit {
       Rows: [
         { Id: 545, Value: '1-Initial Asesmnt and prep-2wek iter Srv', Code: 'ESSBNH', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
         { Id: 500, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
-        { Id: 501, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true }
+        { Id: 501, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
+        { Id: 510, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
+        { Id: 511, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
+        { Id: 521, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
+        { Id: 512, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
+        { Id: 513, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
+        { Id: 514, Value: '1-Initial Assess and prep-2week iter Srv', Code: 'ESSBNK', ActivityTypeCategoryName: 'Service Based', IsCostRateRegistrationAllowed: true },
       ],
       Columns: [
         { PropertyName: 'Id', Title: 'Activity Type Id', Class: 'codeCol' },
