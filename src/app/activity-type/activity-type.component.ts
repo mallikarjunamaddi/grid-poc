@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GridConfig } from '../SharedModels/GridConfig';
+import { PopupTypeEnum } from '../SharedModels/Enums/PopupTypeEnum';
 
 @Component({
   selector: 'app-activity-type',
@@ -11,6 +12,7 @@ export class ActivityTypeComponent implements OnInit {
   selectedItem: any;
   enableEditPopup: boolean;
   enableRemovePopup: boolean;
+  popupType = PopupTypeEnum;
 
   constructor() {
     this.gridConfig = {

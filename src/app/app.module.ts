@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { ActivityTypeComponent } from './activity-type/activity-type.component';
 import { HomeComponent } from './home/home.component';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GridComponent,
     ActivityTypeComponent,
-    HomeComponent
+    HomeComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

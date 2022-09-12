@@ -4,30 +4,27 @@
 <app-grid [gridConfig]="gridConfig" (delete)="deleteById($event)" (edit)="editById($event)"></app-grid>
 
 <!-- Edit Popup -->
-<div class="edit-modal modal-default" *ngIf="enableEditPopup">
-    <header>
-        <h4>Edit Activity Type</h4>
-        <a tabindex="0" title="close modal" (click)="cancelEditActivityType()" id="Edit-ActivityType">
-            <i class="fa fa-window-close"></i>
-        </a>
-    </header>
-    <section>
-        Display Edit Form
-    </section>
-    selectedItem : {{selectedItem | json}}
-</div>
+<app-popup *ngIf="enableEditPopup" [title]="gridConfig.GridTitle" [type]="popupType.EDIT"
+    (close)="cancelEditActivityType()">
+    <form>
+        <section>
+            Display Edit Form
+            <p> selectedItem : {{selectedItem | json}} </p>
+        </section>
+        <footer>
+            <button type="button" (click)="cancelEditActivityType()">Close</button>
+        </footer>
+    </form>
+</app-popup>
 
 <!-- Remove Popup -->
-<div class="remove-modal modal-default" *ngIf="enableRemovePopup">
-    <div>
-        <header>
-            <a title="close modal" (click)="cancelRemoveActivityType()" id="Remove-ActivityType">
-                <i class="fa fa-window-close"></i>
-            </a>
-        </header>
-        <section>
-            Display Remove Form
-        </section>
-        selectedItem : {{selectedItem | json}}
-    </div>
-</div>
+<app-popup *ngIf="enableRemovePopup" [type]="popupType.DELETE"
+    (close)="cancelRemoveActivityType()">
+    <section>
+        Display Remove Form
+        <p> selectedItem : {{selectedItem | json}} </p>
+    </section>
+    <footer>
+        <button type="button" (click)="cancelRemoveActivityType()">Close</button>
+    </footer>
+</app-popup>

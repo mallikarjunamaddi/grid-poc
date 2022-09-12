@@ -1,0 +1,13 @@
+<div class="popup-overlay" ng-show="showPopup"></div>
+<div class="modal-default" [ngClass]="modalClassConfig">
+    <header>
+        <h4 *ngIf="type===popupType.ADD || type===popupType.EDIT">{{title}}</h4>
+        <a tabindex="0" title="close modal" (click)="closePopup()">
+            <i class="fa fa-window-close"></i>
+        </a>
+    </header>
+    <section>
+        <ng-content>
+        </ng-content>
+    </section>
+</div>
